@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  note:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: note
+    ports:
+      - '3000:3000'
+    networks:
+      - voidbox_network
+
+networks:
+  voidbox_network:
+    external: true
