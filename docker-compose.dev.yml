@@ -1,7 +1,9 @@
 version: '3.9'
 services:
   note_app:
-    image: loneexile/note_app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: note_app
     ports:
       - '3000:3000'
