@@ -25,11 +25,14 @@ export default function Upload() {
     formData.append('remotePath', '/')
     formData.append('contentType', 'application/octet-stream')
 
-    const response = await fetch('http://localhost:8080/upload-all', {
-      method: 'POST',
-      body: formData,
-      credentials: 'include', // Include cookies
-    })
+    const response = await fetch(
+      process.env.NEXT_PUBLIC_SERVER_IP + ':8080/upload-all',
+      {
+        method: 'POST',
+        body: formData,
+        credentials: 'include', // Include cookies
+      }
+    )
 
     if (response.ok) {
       alert('Files uploaded successfully!')

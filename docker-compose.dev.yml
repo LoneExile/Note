@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: note_app
+    env_file:
+      - .env
     ports:
       - '3000:3000'
     networks:
