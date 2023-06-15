@@ -26,7 +26,7 @@ export default function Upload() {
     formData.append('contentType', 'application/octet-stream')
 
     const response = await fetch(
-      process.env.NEXT_PUBLIC_SERVER_IP + ':8080/upload-all',
+      process.env.NEXT_PUBLIC_SERVER_IP + ':8090/upload-all',
       {
         method: 'POST',
         body: formData,
@@ -48,6 +48,7 @@ export default function Upload() {
     }
   }
 
+  // https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory
   return (
     <form onSubmit={submitHandler}>
       <input type="file" webkitdirectory="" onChange={fileChangeHandler} />
